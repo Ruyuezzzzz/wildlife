@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wildlife trade visualization</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style_v.css">
+  <script src="https://d3js.org/d3.v5.js"></script>
+</head>
+<body>
+ <!-- introduction --> 
+  <div class="header"> <h1>Wildlife Trade</h1>
+  <p>This visualization is based on CITES Wildlife Trade Database. It records international legal wildlife trade from 2016 to 2017. </div>
+ <div class="container_1">
+<!-- background cover set  -->   
+ <div class="backgroundcover"></div>
+
+<!-- timeline explaining terms and introduction -->    
+ <div class="timeline">
+  <div class="container left">
+    <div class="content">
+      <p>The Convention on International Trade in Endangered Species of Wild Fauna and Flora, or CITES for short, is an international treaty organization tasked with monitoring, reporting, and providing recommendations on the international species trade. CITES is a division of the IUCN, which is one of the principal international organization focused on wildlife conversation at large. </p>
+      
+    </div>
+  </div>
+  <div class="container right">
+    <div class="content">
+      <p>There were 67161 records of legal wildlife trade from 2016 to 2017 in the dataset. But 67007 are of 2006.So 2016 and 2017 data don't have to be compared seperately. </p>
+    </div>
+  </div>
+  <div class="container left">
+    <div class="content">
+      <p> We know commonly there are six types of animals in this world: mammals, birds, fishes, reptiles, amphibians,and invertebrates. In this dataset, they use biological classification:taxon, Class, Order, Family  Genus. A taxon is a group of one or more populations of an organism or organisms seen by taxonomists to form a unit.Family is one of the eight major taxonomic ranks. It is classified between order and genus. The visualization mainly look at taxon and genus.</p>
+    </div>
+  </div>
+</div>
+<h2 id="tax">Top 10 Taxon traded</h2>
+<!-- visual one: top 10 taxon traded -->
+<div class="chart"></div>
+<p class="texts">The numbers of top 10 taxon traded ranges from around 700 to above 2400. There are four taxon traded above 1000 times. They are Crocodylus porosus, Alligator mississippiensis, Python reticulatus, Crocodylus niloticus.And Crocodylus niloticus has the highest trade record which is 2410. Following are the 10 taxon, as you can see, most of they are crocodile, python, elephant, monkey.</p>
+<!-- image to show top 10 taxon -->
+<div id="taxpic">
+  <p class="fivetax1">Crocodylus_niloticus Python_reticulatus Alligator_mississippiensis Crocodylus_porosus Varanus_salvator</p>
+  <img src="img/220px-NileCrocodile.jpg" width="200" height="200" ><img src="img/Retic3.jpg" width="200" height="200">
+  <img src="img/alligator mississippiensis.jpeg" width="200" height="200">
+  <img src="img/Crocodylus porosus.jpeg" width="200" height="200">
+  <img src="img/Varanus_salvator_-_01.jpg" width="200" height="200">
+  <img src="img/Python bivittatus.jpg" width="200" height="200">
+  <img src="img/Acipenser baerii.jpg" width="200" height="200">
+  <img src="img/african_bush_elephant1.jpg" width="200" height="200">
+  <img src="img/Macaca fascicularis.jpeg" width="200" height="200"><img src="img/cape-coral-nile-monitor.jpg" width="200" height="200">
+  <p class="fivetax1">Python_bivittatus Acipenser_baerii Loxodonta_africana Macaca_fascicularis Varanus_niloticus</p></div>
+<!-- visual two: top 10 genus traded -->
+<h2 id="genu">Top 10 Genus traded</h2>
+<div class="chart2"></div>
+<p class="texts">The numbers of top 10 genus traded ranges from around 900 to above 4400. Python
+and Crocodylus had been traded over 4000 times.Crocodylus has the highest trade record. Following are the 10 genus,  there are still crocodile, python, alligator, monkey but also various plants.</p>
+<!-- image to show top 10 genus -->
+<div id="genpic">
+  <p class="fivegen">Crocodylu Python Alligator Varanus Acipenser</p>
+  <img src="img/Crocodylus.jpg" width="200" height="200" ><img src="img/python.jpeg" width="200" height="200">
+  <img src="img/Alligator.jpeg" width="200" height="200">
+  <img src="img/Varanus.jpg" width="200" height="200">
+  <img src="img/Acipenser.jpg" width="200" height="200">
+  <img src="img/Caiman.jpg" width="200" height="200">
+  <img src="img/euphorbia-plant1-400x300.jpg" width="200" height="200">
+  <img src="img/Macaca.jpeg" width="200" height="200">
+  <img src="img/Dendrobium.jpeg" width="200" height="200"><img src="img/Aloe.jpeg" width="200" height="200">
+  <p class="fivegen">Caiman Euphorbia Macaca Dendrobium Aloe</p></div>
+</div>
+<!-- visual three: top 10 terms tradeded-->
+<iframe id="topterm" width="500" height="400" frameborder="0" scrolling="no" src="//plot.ly/~ryzzz1121/44.embed"></iframe>
+<p class="termtext"> Most wildlife are traded as live, leather products with records more than 10000, then are specimens,skins,raw corals,trophies,garments,caviar,extract,bodies. The following chart shows that among live, various genus were traded. Among leather products, Crocodylus, Python, Alligator, Varanus, Caiman were traded most. Among specimens, Macaca(Monkeys) was traded most. Among skin, Crocodylus was trades most again. To a degree, it explains why Crocodylus, Python, Alligator are most traded genus. </p>
+<!-- visual four: Terms tradeds with genus show-->
+<div class='tableauPlaceholder' id='viz1525766732666' style='position: relative'><noscript><a href='#'><img alt='Sheet 2 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='wildlife_5&#47;Sheet2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525766732666');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.45)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<!-- visual five: trade purpose -->
+<iframe id="purpose"width="500" height="400" frameborder="0" scrolling="no" src="//plot.ly/~ryzzz1121/46.embed"></iframe>
+<!-- explain purpose -->
+<p class="ptext">Purpose letters stands for: <br>
+B Breeding in captivity or artificial propagation<br>
+E Educational<br>
+G Botanical garden<br>
+H Hunting trophy<br>
+L Law enforcement / judicial / forensic<br>
+M Medical (including biomedical research)<br>
+N Reintroduction or introduction into the wild<br>
+P Personal<br>
+Q Circus or travelling exhibition<br>
+S Scientific<br>
+T Commercial<br>
+Z Zoo<br>
+From the left and following charts, it is easy to show that most trades are for Commercial use. And among top 10 genus traded, most of they are for Commercial use and traded as leather products.
+</p>
+<!-- visual six: terms and purpose traded among top 10 genus-->
+<div class='tableauPlaceholder' id='viz1525761580648' style='position: relative'><noscript><a href='#'><img alt='Sheet 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1data&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book1data&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1data&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525761580648');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.45)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<h2>Import and Export Countries</h2>
+<p class="texts">Most of the frequent importers are on the northern part of earth like America, Canada, East Asia, northern Europe.Frequent exporters are also in northern part including America, Canada, Northern Europe, China, then South East Asia.</p>
+<!-- visual seven: Import and Export Countries map -->
+<iframe class="importmap"width="600" height="600" frameborder="0" scrolling="no" src="//plot.ly/~ryzzz1121/36.embed"></iframe>
+<iframe width="600" height="600" frameborder="0" scrolling="no" src="//plot.ly/~ryzzz1121/38.embed"></iframe>
+<p class="texts">United States imported wildlife the Most. Netherlands ranks first in the export country, which is a little surprising. </p>
+<!-- visual eight: Top Import and Export Countries -->
+<iframe width="600" height="400" frameborder="0" scrolling="no" src="//plot.ly/~ryzzz1121/34.embed"></iframe>
+<iframe width="600" height="400" frameborder="0" scrolling="no" src="//plot.ly/~ryzzz1121/40.embed"></iframe>
+<!-- visual nine and ten: Import Countries terms traded and trade purpose -->
+<p class="texts">Among top 10 importers, all of they import wildlife mainly for commercial use. Then is for personal and scientific. Terms imported most by them are as live, then leather product and specimens. </p>
+<div class='tableauPlaceholder' id='viz1525762297090' style='position: relative'><noscript><a href='#'><img alt='Sheet 5 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1data&#47;Sheet5&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book1data&#47;Sheet5' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1data&#47;Sheet5&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525762297090');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.45)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<div class='tableauPlaceholder' id='viz1525773067520' style='position: relative'><noscript><a href='#'><img alt='Sheet 6 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet6&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='wildlife_5&#47;Sheet6' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet6&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525773067520');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.45)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<p class="texts">Among top 10 exporters, most of they exported wildlife mainly for commercial use. But there's huge part of nan records in Netherlands.Terms exported most by them are as live, then leather product, specimens and garments. For Netherlands, they traded live the most.</p>
+<!-- visual 11 and 12: Export Countries terms traded and trade purpose -->
+<div class='tableauPlaceholder' id='viz1525773108019' style='position: relative'><noscript><a href='#'><img alt='Sheet 7 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet7&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='wildlife_5&#47;Sheet7' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet7&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525773108019');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.25)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<div class='tableauPlaceholder' id='viz1525773152464' style='position: relative'><noscript><a href='#'><img alt='Sheet 8 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet8&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='wildlife_5&#47;Sheet8' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet8&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525773152464');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.25)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<p class="texts">Combining with top 10 genus, US imported every genus the most.</p>
+<!-- visual 13: Import Countries top genus imported -->
+ <div class='tableauPlaceholder' id='viz1525762190823' style='position: relative'><noscript><a href='#'><img alt='Sheet 3 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1data&#47;Sheet3&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book1data&#47;Sheet3' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1data&#47;Sheet3&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525762190823');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.45)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<p class="texts">From following chart, it seems that Italy exported every genus the most. So why did Netherlands is the country with highest export number?</p>
+<!-- visual 14: Export Countries top genus exported -->
+<div class='tableauPlaceholder' id='viz1525762254019' style='position: relative'><noscript><a href='#'><img alt='Sheet 4 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1data&#47;Sheet4&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Book1data&#47;Sheet4' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Bo&#47;Book1data&#47;Sheet4&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525762254019');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.45)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+<p class="texts">From following chart, it is easy to see that actually Netherlands exported plants the most since Mammillaria, Aloe, Euphorbia, Rhipsalis are all pants. And related to real life, it is very reasonable.</p>
+<!-- visual 15: Export Countries genus exported -->
+<div class='tableauPlaceholder' id='viz1525774332087' style='position: relative'><noscript><a href='#'><img alt='Sheet 9 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet9&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='wildlife_5&#47;Sheet9' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;wi&#47;wildlife_5&#47;Sheet9&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525774332087');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='95%';vizElement.style.height=(divElement.offsetWidth*0.45)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+<h2>Conclusion:</h2>
+<p class="texts">Most of the wildlife are traded for for commercial as live and leather products.Most of the trade happened in northern part of earth. Although they are legal,but still represents a major threat to biodiversity conservation. Animals are captured, killed and traded live or in parts for a number of purposes such as for food and medicine; clothing and ornaments; entertainment, including for pets, zoos and aquariums. Needless to say the trade in black market.Here is a fact table about illegal wildlife trade.</p>
+<!-- visual 16: fact table about illegal wildlife trade -->
+<iframe class="table"width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~ryzzz1121/48.embed"></iframe>
+<p class="texts">In terms of animal population,it is decreasing every year and some species has already been on the brink of extinction. More strict rules should be set for wildlife trade.</p>
+
+<!-- visual 17: animal pupulation infographic -->
+<div class="info"> <script  src="https://infograph.venngage.com/js/embed/v1/embed.js" data-vg-id="03DFVQEJvw" data-title="Animal population" data-w="800" data-h="1045" data-multipage="true"></script></div>
+
+
+<!-- using d3 to draw visual one and two -->
+ <script type="text/javascript">
+  var toptaxon=[{taxon: "Varanus niloticus", number:734},
+{taxon:"Macaca fascicularis",number: 793},
+{taxon:"Loxodonta africana", number: 851},
+{taxon:"Acipenser baerii",  number:911},
+{taxon:"Python bivittatus", number:925},
+{taxon:"Varanus salvator", number:956},
+{taxon:"Crocodylus porosus",number:1404},
+{taxon:"Alligator mississippiensis", number:2081},
+{taxon:"Python reticulatus", number:2304},
+{taxon:"Crocodylus niloticus",  number:2410}];
+var taxons = toptaxon.map(function(t) {
+  return t.taxon
+});
+var margin = {top: 5, right: 5, bottom: 50, left: 50};
+var fullWidth = 1100;
+var fullHeight = 400;
+var width = fullWidth - margin.right - margin.left;
+var height = fullHeight - margin.top - margin.bottom;
+var svg = d3.select('.chart').append('svg')
+  .attr('width', fullWidth)
+  .attr('height', fullHeight)
+  .append('g')
+    // translate it to leave room for the left and top margins
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+var taxonScale = d3.scaleBand().domain(taxons)
+  .range([0, width])
+  .paddingInner(0.1);
+
+// the width of the bars 
+var bandwidth = taxonScale.bandwidth();
+
+// y value 
+var maxNumber = d3.max(toptaxon, function(d) { return d.number; });
+var numberScale = d3.scaleLinear()
+  .domain([0, maxNumber])
+  .range([height, 0])
+  .nice();
+
+var xAxis = d3.axisBottom(taxonScale);
+var yAxis = d3.axisLeft(numberScale);
+
+
+// draw the axes
+svg.append('g')
+  .classed('x axis', true)
+  .attr('transform', 'translate(0,' + height + ')')
+  .call(xAxis);
+
+var yAxisEle = svg.append('g')
+  .classed('y axis', true)
+  .call(yAxis);
+
+// add a label to the yAxis
+var yText = yAxisEle.append('text')
+  .attr('transform', 'rotate(-90)translate(-' + height/2 + ',0)')
+  .style('text-anchor', 'middle')
+  .style('fill', 'black')
+  .attr('dy', '-2.5em')
+  .style('font-size', 14)
+  .text('Number of records');
+
+var barHolder = svg.append('g')
+  .classed('bar-holder', true);
+
+// draw the bars
+var bars = barHolder.selectAll('rect.bar')
+    .data(toptaxon)
+  .enter().append('rect')
+    .classed('bar', true)
+    .attr('x', function(d, i) {
+      return taxonScale(d.taxon)
+    })
+    .attr('width', bandwidth)
+    .attr('y', function(d) {
+      return numberScale(d.number);
+    })
+    .attr('height', function(d) {
+      return height - numberScale(d.number);
+    });  
+  </script>
+
+ <script type="text/javascript">
+var topgenus=[{genus: "Aloe", number:935},
+{genus:"Dendrobium",number: 970},
+{genus:"Macaca", number: 971},
+{genus:"Euphorbia",  number:1147},
+{genus:"Caiman", number:1627},
+{genus:"Acipenser", number:1976},
+{genus:"Varanus",number:2079},
+{genus:"Alligator", number:2100},
+{genus:"Python", number:4248},
+{genus:"Crocodylus",  number:4408}];
+var genuss = topgenus.map(function(h) {
+  return h.genus
+});
+var margin = {top: 5, right: 5, bottom: 50, left: 50};
+var fullWidth = 1100;
+var fullHeight = 400;
+var width = fullWidth - margin.right - margin.left;
+var height = fullHeight - margin.top - margin.bottom;
+var svg2 = d3.select('.chart2').append('svg')
+  .attr('width', fullWidth)
+  .attr('height', fullHeight)
+  .append('g')
+  .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+var genusScale = d3.scaleBand().domain(genuss)
+  .range([0, width])
+  .paddingInner(0.1);
+
+var bandwidth2 = genusScale.bandwidth();
+
+
+var maxNumber2 = d3.max(topgenus, function(e) { return e.number; });
+var numberScale2 = d3.scaleLinear()
+  .domain([0, maxNumber2])
+  .range([height, 0])
+  .nice();
+
+var xAxis2 = d3.axisBottom(genusScale);
+var yAxis2 = d3.axisLeft(numberScale2);
+
+
+svg2.append('g')
+  .classed('x axis2', true)
+  .attr('transform', 'translate(0,' + height + ')')
+  .call(xAxis2);
+
+var yAxisEle2 = svg2.append('g')
+  .classed('y axis2', true)
+  .call(yAxis2);
+
+var yText2 = yAxisEle2.append('text')
+  .attr('transform', 'rotate(-90)translate(-' + height/2 + ',0)')
+  .style('text-anchor', 'middle')
+  .style('fill', 'black')
+  .attr('dy', '-2.5em')
+  .style('font-size', 14)
+  .text('Number of records');
+
+var barHolder2 = svg2.append('g')
+  .classed('bar-holder2', true);
+
+
+var bars2 = barHolder2.selectAll('rect.bar')
+    .data(topgenus)
+  .enter().append('rect')
+    .classed('bar2', true)
+    .attr('x', function(e, i) {
+      return genusScale(e.genus)
+    })
+    .attr('width', bandwidth2)
+    .attr('y', function(e) {
+      return numberScale2(e.number);
+    })
+    .attr('height', function(e) {
+      return height - numberScale2(e.number);
+    });
+
+</script>  
+</body>
+<footer>
+  <p> &copy; All Rights Reserved Ruyue</p>
+
+</footer>
+</html>
